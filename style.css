@@ -5,8 +5,9 @@
 }
 .main{
     height: 100vh;
+    padding: 0px 40px;
 }
-.main .backg{
+.backg{
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -16,7 +17,7 @@
 .header{
     display: flex;
     justify-content: space-between;
-    padding : 10px 15px;
+    padding : 10px 0px;
 }
 .header .logo{
     font-size: 30px;
@@ -27,26 +28,41 @@
     flex-direction: row;
     font-size: 30px;
 }
-.header .menu li{
+.header .menu ul li{
     list-style: none;
-    padding: 25px;
+    padding: 0px 25px;
 }
-.header .menu li:hover{
-    cursor: pointer;
-}
-.header .menu a{
+.header .menu ul li a{
     text-decoration: none;
     color: #333;
+    position: relative;
+}
+.header .menu ul li:nth-child(3) a
+.header .menu ul li:nth-child(4) a{
+    color: #333;
+}
+.header .menu li a::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: yellow;
+}
+.header .menu li a:hover::before{
+    width: 50px;
+    cursor: pointer;
 }
 .contents{
     display: flex;
 }
 .contents .text{
-    padding: 70px 40px 0px 40px;
+    padding-top: 20px;
     width: 50%;
 }
 .contents .text .title{
-    font-size: 80px;
+    font-size: 60px;
 }
 .contents .text .description{
     padding-top: 30px;
@@ -54,57 +70,92 @@
     font-size: 25px;
 }
 .contents .text a{
-    width: 130px;
-    border: solid 1px;
-    padding: 10px;
+    font-size: 22px;
     font-weight: bold;
     color: black;
-    background-color: thistle;
-    border-radius: 5%;
-    font-size: 25px;
     text-decoration: none;
-    color: #333;
+    padding-left: 5px;
 }
-.contents .text a:hover{
+.contents .text a::before{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    left: 35px;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: yellow;
+}
+.contents .text a:hover::before{
+    width: 135px;
+    height: 40px;
     cursor: pointer;
+    position: absolute;
+    transition: 0.5s;
+    z-index: -1;
 }
 .contents .image{
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 .contents .image img{
     width: auto; height: auto;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 350px;
+    max-height: 350px;
 }
 .footer{
     display: flex;
     justify-content: space-between;
-    padding: 0px 40px 0px 40px;
+    
 }
 .footer .sns{
     display: flex;
     flex-direction: row;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 .footer .sns li{
     list-style: none;
-    padding: 15px;
     font-size: 35px;
     color: white;
+    padding-right: 30px;
+}
+.footer .sns li:hover{
+    position: relative;
+    bottom: 10px;
+    left: 10px;
 }
 .footer .next{
     display: flex;
     flex-direction: row;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 .footer .next li{
     list-style: none;
     font-size: 40px;
     color: white;
     padding-right: 40px;
-    padding-top: 10px;
+}
+.toogleBtn{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: yellow;
+}
+
+@media screen and (max-width: 700px){
+    .main{
+        flex-direction: column;
+        padding: 20px 50px;
+        height: 100vh;
+    }
+    .contents .text .title {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
 }
