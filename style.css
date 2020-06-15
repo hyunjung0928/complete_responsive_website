@@ -138,24 +138,117 @@
     color: white;
     padding-right: 40px;
 }
-.toogleBtn{
+.header_toggleBtn{
     display: none;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 10px;
     font-size: 24px;
-    color: yellow;
+    color: black;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 600px){
     .main{
         flex-direction: column;
-        padding: 20px 50px;
+        padding: 0px 10px;
         height: 100vh;
     }
-    .contents .text .title {
-        font-weight: bold;
-        font-size: 30px;
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
     }
-
+    .header .logo{
+        font-size: 15px;
+    }
+    .header .menu ul{
+        /* display: none; */
+        font-size: 15px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 30vh;
+        background-color: #fff;
+        z-index: 100;
+    }
+    .header .menu ul.active{
+        display : flex;
+    }
+    .header .menu ul li{
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .header .menu ul li a{
+        color: #333 !important;
+    }
+    .header .menu li a:hover::before{
+        width: 20px;
+    }
+    .contents{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .contents .image{
+        padding-top: 0px;
+        transform: rotate(270deg);
+    }
+    .contents .image img{
+        width: auto; height: auto;
+        max-width: 350px;
+        max-height: 350px;
+    }
+    .contents .text{
+        padding-top: 0px;
+        width: 100%;
+    }
+    .contents .text .title{
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .contents .text .description{
+        padding-top: 0px;
+        padding-bottom: 20px;
+        font-size: 15px;
+        z-index: 1;
+    }
+    .contents .text a{
+        font-size: 16px;
+    }
+    .contents .text a::before{
+        width: 50px;
+        height: 30px;
+        left: 9px;
+    }
+    .contents .text a:hover::before{
+        width: 100px;
+        height: 30px;
+    }
+    .footer .sns{
+        padding-top: 10px;
+    }
+    .footer .sns li{
+        font-size: 25px;
+        color: black;
+        padding-right: 20px;
+    }
+    .footer .sns li:hover{
+        position: relative;
+        bottom: 10px;
+        left: 10px;
+    }
+    .footer .next{
+        display: flex;
+        flex-direction: row;
+        padding-top: 5px;
+    }
+    .footer .next li{
+        font-size: 25px;
+        color: black;
+        padding-right: 20px;
+    }
+    .header_toggleBtn {
+        display: block;
+    }
+    
 }

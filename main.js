@@ -1,6 +1,6 @@
-const toogleBtn = document.querySelector('.toogleBtn');
+const toggleBtn = document.querySelector('.header_toggleBtn');
 const menu = document.querySelector('.menu');
 
-toogleBtn.addEventListener('click', ()=>{
+toggleBtn.addEventListener('click', ()=>{
     menu.classList.toggle('active');
 });
